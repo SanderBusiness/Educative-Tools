@@ -3,7 +3,7 @@
 name: Test Server
 on:
   push:
-    branches: !['main']
+    branches: !main
     paths: [ 'Backend/**' ]
   pull_request:
     types: [ opened, synchronize, reopened, closed ]
