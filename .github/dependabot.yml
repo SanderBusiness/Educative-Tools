@@ -3,8 +3,8 @@ updates:
   - package-ecosystem: "nuget" # See documentation for possible values
     directory: "/Backend" # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: "weekly"
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/Frontend" # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: "weekly"
