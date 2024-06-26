@@ -9,6 +9,7 @@ The differences is that we will keep it free so that the next generation can use
 #### Backend: .NET 8
 - N-Layer Architecture
 - API's with Controllers
-- MySQL for production
-- SQLite for development
-- InMemory for testing
+- DAL layer with Repositories
+  - MySQL for production
+  - SQLite for development
+  - InMemory for testing
