@@ -11,3 +11,4 @@ The differences is that we will keep it free so that the next generation can use
 - API's with Controllers
 - MySQL for production
 - SQLite for development
+- InMemory for testing
