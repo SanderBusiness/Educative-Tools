@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Generic;
 
-public class Repository<T, TK> : IRepository<T, TK> where T : class
+public abstract class Repository<T, TK> : IRepository<T, TK> where T : class
 {
-    public Repository(ApplicationContext db)
+    protected Repository(ApplicationContext db)
     {
         Db = db;
         Table = Db.Set<T>();

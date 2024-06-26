@@ -1,9 +1,9 @@
 ﻿using BL.Services.Interfaces;
-using DAL.Repositories.Implementations;
+using DAL.Repositories.Interfaces;
 
 namespace BL.Services.Implementations;
 
-public class QuizService(QuizRepository repository) : IQuizService
+public class QuizService(IQuizRepository repository) : IQuizService
 {
     
 }
