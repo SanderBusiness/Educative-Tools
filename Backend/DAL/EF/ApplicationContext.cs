@@ -36,5 +36,6 @@ public class ApplicationContext(ILoggerFactory loggerFactory, IConfiguration con
         else 
             optionsBuilder.UseSqlite("Data Source=/DAL/bin/database.db;Version=3;", builder => builder.MigrationsAssembly(migrationsAssembly));
         Database.EnsureCreated();
+        Database.Migrate();
     }
 }
