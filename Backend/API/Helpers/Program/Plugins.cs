@@ -41,5 +41,6 @@ public static class Plugins
         app.UseHttpsRedirection();
         app.UseRouting();
         app.UseAuthorization();
+        app.EnsureMigrationsComplete();
     }
 }

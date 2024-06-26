@@ -34,6 +34,6 @@ public class ApplicationContext(ILoggerFactory loggerFactory, IConfiguration con
         if (!string.IsNullOrEmpty(connection))
             optionsBuilder.UseMySQL(connection, builder => builder.MigrationsAssembly(migrationsAssembly));
         else 
-            optionsBuilder.UseSqlite("Data Source=/DAL/bin/database.db;Version=3;", builder => builder.MigrationsAssembly(migrationsAssembly));
+            optionsBuilder.UseSqlite("Data Source=../DAL/bin/database.db;", builder => builder.MigrationsAssembly(migrationsAssembly));
     }
 }
