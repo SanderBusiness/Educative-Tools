@@ -4,9 +4,6 @@ name: Test Server
 on:
   push:
     paths: [ 'Backend/**' ]
-  pull_request:
-    types: [ opened, synchronize, reopened, closed ]
-    paths: [ 'Backend/**' ]
 
 jobs:
   test:
