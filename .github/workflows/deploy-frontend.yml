@@ -3,7 +3,7 @@ name: Deploy Frontend
 on:
   push:
     branches: ['main']
-    paths: [ 'Client/**', '**' ]
+    paths: [ 'Frontend/**' ]
 
 jobs:
   build_and_deploy_job:
