@@ -1,28 +1,33 @@
-﻿using DAL.EF;
+﻿using BL.Services.Implementations;
+using BL.Services.Interfaces;
+using DAL.EF;
+using DAL.Repositories.Implementations;
+using DAL.Repositories.Interfaces;
 
 namespace API.Helpers.Program;
 
 public static class Plugins
 {
-    public static IServiceCollection AddPlugins(this IServiceCollection services)
+    public static void AddPlugins(this IServiceCollection services)
     {
         services
             .AddSwaggerGen()
             .AddDataAccessLayer()
             .AddBusinessLogic()
             .AddControllers();
-        return services;
     }
 
     private static IServiceCollection AddBusinessLogic(this IServiceCollection services)
     {
-        return services;
+        return services
+            .AddScoped<IQuizService, QuizService>();
     }
 
     private static IServiceCollection AddDataAccessLayer(this IServiceCollection services)
     {
         return services
-            .AddDbContext<ApplicationContext>();
+            .AddDbContext<ApplicationContext>()
+            .AddScoped<IQuizRepository, QuizRepository>();
     }
 
     public static void EnablePlugins(this WebApplication app)
@@ -36,5 +41,6 @@ public static class Plugins
         app.UseHttpsRedirection();
         app.UseRouting();
         app.UseAuthorization();
+        app.EnsureMigrationsComplete();
     }
 }

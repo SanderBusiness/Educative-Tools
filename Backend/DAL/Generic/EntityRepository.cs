@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Generic;
 
-public class EntityRepository<T, TK>(ApplicationContext db) : Repository<T, TK>(db), IEntityRepository<T, TK>
+public abstract class EntityRepository<T, TK>(ApplicationContext db) : Repository<T, TK>(db), IEntityRepository<T, TK>
     where T : Entity
 {
     public async Task<List<T>> Read(int page, int rows, bool asc)

@@ -26,7 +26,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\BL\BL.csproj" />
       <ProjectReference Include="..\DAL\DAL.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="database.db" />
     </ItemGroup>
 
 </Project>

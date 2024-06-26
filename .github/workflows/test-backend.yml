@@ -1,0 +1,28 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+name: Test Server
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+    paths: [ 'Backend/**' ]
+
+jobs:
+  test:
+    if: (github.event_name == 'pull_request' && github.ref != 'refs/heads/main')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+      - name: Restore Test dependencies
+        run: cd ./Backend/Test && dotnet restore
+      - name: Build Test
+        run: cd ./Backend/Test && dotnet build --no-restore
+      - name: Test
+        run: cd ./Backend/Test && dotnet test --verbosity normal --no-restore --no-build
+      - name: Restore API dependencies
+        run: cd ./Backend/API && dotnet restore
+      - name: Build API
+        run: cd ./Backend/API && dotnet build --no-restore
