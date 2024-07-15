@@ -8,8 +8,8 @@
 
     <ItemGroup>
       <PackageReference Include="EntityFrameworkCore.Projectables" Version="3.0.4" />
-      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.7" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.6" />
       <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.5" />
     </ItemGroup>
